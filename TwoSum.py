@@ -41,9 +41,11 @@ class TwoSum:
         print(self.twoSum(nums,target))
 
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        print('hi')
-        return nums
-    
-    def solve(self, nums):
-        print(nums)
+        length = len(nums)
+        for x in range(0,length):
+            for y in range(x,length):
+                if (x!=y) and (nums[x]+nums[y] == target):
+                    return [x,y]
+        return []
 
+TwoSum(nums =[3,2,4], target =6)
