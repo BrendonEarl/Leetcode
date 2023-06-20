@@ -41,39 +41,25 @@ class Solution(object):
         sol = Solution()
         firstVal, firstCarryDigit = sol.addNodes(l1.val, l2.val)
         firstNode = ListNode(firstVal)
+
         test = sol.addTwoNumbersHelper(l1.next, l2.next, ListNode(None,None), firstCarryDigit)
-        if test.val != None:
+        if test.val is not None:
             firstNode.next = test
-        sol.printNode(firstNode=firstNode)
+        
         return firstNode
 
     def addTwoNumbersHelper(self, l1, l2, node, carry_digit):
 
         if not l1 and not l2:
-            if carry_digit and carry_digit != 0:
-                node.val = carry_digit
-            else:
-                node.val=None
+            node.val = carry_digit if carry_digit else None
             return node
-            
-
-        elif not l1 or not l2:
-            if l1:
-                digit, carry = self.addNodes(l1.val, 0, carry_digit)
-                node.val = digit
-
-            else:
-                digit, carry = self.addNodes(0, l2.val, carry_digit)
-                node.val = digit
 
         else:
-            digit, carry = self.addNodes(l1.val, l2.val, carry_digit)
-            node.val = digit
+            node.val, carry = self.addNodes(l1.val if l1 else 0, l2.val if l2 else 0, carry_digit)
 
-        one = l1.next if l1 else None
-        two = l2.next if l2 else None
-        test = self.addTwoNumbersHelper(one, two, ListNode(), carry)
-        if test.val != None:
+        test = self.addTwoNumbersHelper(l1.next if l1 else None, l2.next if l2 else None, ListNode(), carry)
+        
+        if test.val is not None:
             node.next = test
         return node
 
@@ -112,7 +98,5 @@ class Solution(object):
 #                 tNode.val,tNode.next = list[index], None
 #             else:
 #                 tNode.val,tNode.next = list[index], (nNode := ListNode(list[index+1]))
-    
-    
 
 # print(Solution.addTwoNumbers(Solution, primaryNodes[0], primaryNodes[1]))
