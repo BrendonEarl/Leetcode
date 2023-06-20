@@ -39,6 +39,7 @@ class ListNode(object):
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
         sol = Solution()
+        
         firstVal, firstCarryDigit = sol.addNodes(l1.val, l2.val)
         firstNode = ListNode(firstVal)
 
