@@ -30,5 +30,30 @@ Constraints:
 s consists of English letters, digits, symbols and spaces.
 """
 class Solution:
+    
     def lengthOfLongestSubstring(self, s: str) -> int:
-        pass
+        max,longest,longest_length = len(s),[],0
+        for index,_ in enumerate(s):
+            chars = []
+            ll = 0
+            spoint = index
+            while True:
+                if spoint>=max:
+                    if ll>longest_length:
+                        longest_length=ll
+                        longest=chars
+                    break 
+                if (a:=s[spoint]) not in chars:
+                    chars.append(a)
+                    ll += 1
+                    spoint += 1
+                else:
+                    if ll>longest_length:
+                        longest_length=ll
+                        longest=chars
+                    break
+        print(f'chars: {longest} \n length: {longest_length}') 
+        return longest_length  
+        
+
+Solution().lengthOfLongestSubstring(" ")
