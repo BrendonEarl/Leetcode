@@ -54,6 +54,26 @@ class Solution:
                     break
         print(f'chars: {longest} \n length: {longest_length}') 
         return longest_length  
+    
+    def lengthOfLongestSubstringSpeed(self, s: str) -> int:
+        longest_length,spoint,epoint,longest = 0,0,0,[]
+        
+        visited = {}
+        for epoint in range(len(s)):
+            char = s[epoint]
+            if char in visited and (new_spoint:=visited[char]+1) > spoint:
+                spoint = new_spoint
+            else:
+                if (new_longest_length := epoint-spoint+1) > longest_length:
+                    longest_length = new_longest_length
+                    longest = s[spoint:epoint+1]
+                    
+                
+            visited[char]=epoint
+        print(f'chars: {longest} \n length: {longest_length}') 
+        return longest_length
+                    
+            
         
 
-Solution().lengthOfLongestSubstring(" ")
+# Solution().lengthOfLongestSubstringSpeed("pwwkew")
