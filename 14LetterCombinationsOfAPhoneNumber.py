@@ -13,6 +13,7 @@ class Solution:
         "9": ["w", "x", "y", "z"],
 
     }
+
     def letterCombinations(self, digits: str) -> List[str]:
         if (length := len(digits)) == 0:
             return []
@@ -23,7 +24,7 @@ class Solution:
         for d in digits:
             test.append(self.vals[d])
 
-        print(self.letterCombinationsHelper(test, length-1))
+        print(self.letterCombinationsHelper(test, length - 1))
 
     def letterCombinationsHelper(self, test: List[str], index) -> List[str]:
         if index < 0:
