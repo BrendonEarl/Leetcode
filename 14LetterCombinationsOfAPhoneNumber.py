@@ -23,20 +23,12 @@ class Solution:
         for d in digits:
             test.append(self.vals[d])
 
-        solve = []
-        for a in test[0]:
-            for b in test[1]:
-                if length > 2:
-                    for c in test[2]:
-                        if length > 3:
-                            for d in test[3]:
-                                solve.append("".join([a, b, c, d]))
-                        else:
-                            solve.append("".join([a, b, c]))
-                else:
-                    solve.append("".join([a, b]))
+        print(self.letterCombinationsHelper(test, length-1))
 
-        return solve
+    def letterCombinationsHelper(self, test: List[str], index) -> List[str]:
+        if index < 0:
+            return ['']
+        return [(y + z) for y in (self.letterCombinationsHelper(test, index - 1)) for z in test[index]]
 
 
 t = Solution().letterCombinations("237")
