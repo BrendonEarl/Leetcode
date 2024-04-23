@@ -2,7 +2,8 @@ from typing import List
 
 
 class Solution:
-    vals = {
+
+    keyPadDict = {
         "2": ["a", "b", "c"],
         "3": ["d", "e", "f"],
         "4": ["g", "h", "i"],
@@ -11,25 +12,25 @@ class Solution:
         "7": ["p", "q", "r", "s"],
         "8": ["t", "u", "v"],
         "9": ["w", "x", "y", "z"],
-
     }
 
     def letterCombinations(self, digits: str) -> List[str]:
         if (length := len(digits)) == 0:
             return []
         elif length == 1:
-            return self.vals[digits[0]]
+            return self.keyPadDict[digits[0]]
 
-        test = []
+        letters = []
         for d in digits:
-            test.append(self.vals[d])
+            letters.append(self.keyPadDict[d])
 
-        print(self.letterCombinationsHelper(test, length - 1))
+        return self.letterCombinationsHelper(letters, length - 1)
 
-    def letterCombinationsHelper(self, test: List[str], index) -> List[str]:
+    def letterCombinationsHelper(self, letters: List[str], index) -> List[str]:
         if index < 0:
             return ['']
-        return [(y + z) for y in (self.letterCombinationsHelper(test, index - 1)) for z in test[index]]
+        return [(y + z) for y in (self.letterCombinationsHelper(letters, index - 1)) for z in letters[index]]
 
 
 t = Solution().letterCombinations("237")
+print(t)
