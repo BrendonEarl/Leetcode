@@ -57,10 +57,8 @@ def xyzHelper(nodeList, index):
         return None
     return ListNode(nodeList[index], xyzHelper(nodeList, index + 1))
 
-
 def xyz(arr):
     return xyzHelper(arr, 0)
-
 
 t = xyz(nodes)
 u = xyz(nodes2)
