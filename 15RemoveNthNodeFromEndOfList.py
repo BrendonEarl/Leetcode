@@ -17,7 +17,7 @@ class Solution:
         return self.removeNthHelper(head, n)
 
     def removeNthHelper(self, node: Optional[ListNode], n) -> Optional[ListNode]:
-        if node == None:
+        if node is None:
             self.counter += 1
             return None
 
