@@ -53,7 +53,7 @@ nodes2 = [0, 3, 5, 8, 13, 13, 14]
 nodes3 = [-1,60,61,62]
 # nodes = []
 # nodes2 = [0]
-
+# todo more efficient
 
 def xyzHelper(nodeList, index):
     if index >= len(nodeList):
