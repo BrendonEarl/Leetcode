@@ -35,7 +35,6 @@ class Solution:
 
 nodes = [1, 2]
 
-
 def xyzHelper(nodeList, index):
     if index >= len(nodeList):
         return None
