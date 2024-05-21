@@ -43,6 +43,7 @@ nodes2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # nodes = []
 # nodes2 = [0]
+#todo
 
 
 def xyzHelper(nodeList, index):
