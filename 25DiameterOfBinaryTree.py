@@ -6,9 +6,13 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-    
+
 
 class Solution:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         pass
-    #todo: do
+    # todo: do
+
+
+troot = TreeNode(3, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7)))
+
