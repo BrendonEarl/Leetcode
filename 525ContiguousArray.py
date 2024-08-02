@@ -33,3 +33,5 @@ print(t)
 
 
 print([1,1,1,0][1::2])
+
+# https://leetcode.com/problems/contiguous-array

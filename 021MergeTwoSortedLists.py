@@ -68,3 +68,5 @@ r = Solution().mergeTwoLists(t, u)
 while r:
     print(r)
     r = r.next
+
+# https://leetcode.com/problems/merge-two-sorted-lists

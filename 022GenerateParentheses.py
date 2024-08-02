@@ -36,6 +36,9 @@ t = Solution().generateParenthesis(4)
 print(t)
 print(q:=["(((())))","((()()))","((())())","((()))()","(()(()))","(()()())","(()())()","(())(())","(())()()","()((()))","()(()())","()(())()","()()(())","()()()()"])
 #todo
+
 for e in q:
     if e not in t:
         print(e)
+
+# https://leetcode.com/problems/generate-parentheses

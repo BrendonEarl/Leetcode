@@ -44,9 +44,10 @@ class TwoSum:
         length = len(nums)
         for x in range(0, length):
             for y in range(x, length):
-                if (x != y) and (nums[x]+nums[y] == target):
+                if (x != y) and (nums[x] + nums[y] == target):
                     return [x, y]
         return []
 
 
 TwoSum(nums=[3, 2, 4], target=6)
+link = "https://leetcode.com/problems/two-sum"

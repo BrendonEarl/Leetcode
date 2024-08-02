@@ -1,4 +1,3 @@
-
 """
     Given a string s, find the length of the longest 
 substring
@@ -62,12 +61,12 @@ class Solution:
 
         visited = {}
         for epoint, char in enumerate(s):
-            if char in visited and (new_spoint := visited[char]+1) > spoint:
+            if char in visited and (new_spoint := visited[char] + 1) > spoint:
                 spoint = new_spoint
             else:
-                if (new_longest_length := epoint-spoint+1) > longest_length:
+                if (new_longest_length := epoint - spoint + 1) > longest_length:
                     longest_length = new_longest_length
-                    longest = s[spoint:epoint+1]
+                    longest = s[spoint:epoint + 1]
 
             visited[char] = epoint
         print(f'chars: {longest} \n length: {longest_length}')
@@ -75,3 +74,5 @@ class Solution:
 
 
 Solution().lengthOfLongestSubstringSpeed("pwwkew")
+
+# https://leetcode.com/problems/longest-substring-without-repeating-characters

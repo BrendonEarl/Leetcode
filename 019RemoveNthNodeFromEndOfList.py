@@ -49,3 +49,5 @@ t = xyz(nodes)
 
 r = Solution().removeNthFromEnd(t, 1)
 print(r)
+
+# https://leetcode.com/problems/remove-nth-node-from-end-of-list

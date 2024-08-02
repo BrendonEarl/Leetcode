@@ -18,3 +18,5 @@ class Solution:
 
 
 print(Solution().longestCommonPrefix(["ag", "a"]))
+
+# https://leetcode.com/problems/longest-common-prefix

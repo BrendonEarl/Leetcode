@@ -29,3 +29,5 @@ troot = TreeNode(3, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7)))
 froot = TreeNode(1, TreeNode(2, TreeNode(3, TreeNode(4), TreeNode(4)), TreeNode(3)), TreeNode(2))
 
 print(Solution.isBalanced(Solution(),froot))
+
+# https://leetcode.com/problems/balanced-binary-tree

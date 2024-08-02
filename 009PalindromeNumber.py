@@ -17,3 +17,6 @@ class Solution:
 
 
 Solution().isPalindrome(x=666)
+
+# https://leetcode.com/problems/palindrome-number
+

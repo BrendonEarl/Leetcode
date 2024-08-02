@@ -64,3 +64,5 @@ r = Solution().swapPairs(u)
 while r:
     print(r)
     r = r.next
+
+# https://leetcode.com/problems/swap-nodes-in-pairs

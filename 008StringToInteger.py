@@ -95,3 +95,5 @@ class Solution:
 # print(Solution().myAtoi(" -1123u3761867"))
 # print(Solution().myAtoi("words and 987"))
 # print(Solution().myAtoi("-91283472332"))
+
+# https://leetcode.com/problems/string-to-integer-atoi

@@ -39,3 +39,5 @@ class Solution:
 t = Solution().threeSum([-1, 0, 1, 2, -1, -4])
 print(t)
 #todo
+
+# https://leetcode.com/problems/3sum

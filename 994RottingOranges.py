@@ -20,3 +20,5 @@ y = Solution().orangesRotting([[2,1,1],[0,1,1],[1,0,1]])
 # z = Solution().orangesRotting([[2,1,1],[1,1,0],[0,1,1]])
 # a = Solution().orangesRotting([[0,2],[0,2]])
 # print(a) todo
+
+# https://leetcode.com/problems/rotting-oranges

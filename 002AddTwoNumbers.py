@@ -104,3 +104,6 @@ class Solution(object):
 #                 tNode.val,tNode.next = list[index], (nNode := ListNode(list[index+1]))
 
 # print(Solution.addTwoNumbers(Solution, primaryNodes[0], primaryNodes[1]))
+
+
+link = 'https://leetcode.com/problems/add-two-numbers'
