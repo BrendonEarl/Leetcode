@@ -1,13 +1,5 @@
 from typing import Optional
-
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-    def __str__(self):
-        return f'{self.val} {self.next.val if self.next else self.next}'
+from DataStructures.ListNode import ListNode
 
 
 class Solution:
@@ -21,7 +13,7 @@ class Solution:
         if head.next is None:
             return head
 
-        h = ListNode(head.val,head.next)
+        h = ListNode(head.val, head.next)
         n = ListNode(head.next.val, head.next.next)
         x = ListNode(head.next.next.val, head.next.next.next) if (n.next is not None) else None
 
@@ -29,37 +21,23 @@ class Solution:
 
         if i % 2:
 
-            h.next = self.swapPairsHelper(n, i+1)
+            h.next = self.swapPairsHelper(n, i + 1)
             return h
         else:
             n.next = h
-            h.next = self.swapPairsHelper(h, i+1)
+            h.next = self.swapPairsHelper(h, i + 1)
             return n
-
-
 
 
 nodes2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+
 # nodes = []
 # nodes2 = [0]
-#todo
+# todo
 
+u = ListNode().getRootFromArray(nodes2)
 
-def xyzHelper(nodeList, index):
-    if index >= len(nodeList):
-        return None
-    return ListNode(nodeList[index], xyzHelper(nodeList, index + 1))
-
-
-def xyz(arr):
-    return xyzHelper(arr, 0)
-
-
-# t = xyz(nodes)
-u = xyz(nodes2)
-
-# print(f'{t} {u}')
 r = Solution().swapPairs(u)
 while r:
     print(r)

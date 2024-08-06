@@ -3,7 +3,7 @@
 class Solution:
 
     def reverse(self, x: int) -> int:
-        li = (str)(x)
+        li = str(x)
         if li[0] == (neg_sign := '-'):
             neg = True
             li = li[1:]

@@ -16,3 +16,5 @@ class Solution:
 
 s = Solution().missingNumber([9,6,4,2,3,5,7,0,1])
 print(s)
+
+# https://leetcode.com/problems/missing-number

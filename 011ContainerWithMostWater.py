@@ -3,9 +3,10 @@ from typing import List
 
 class Solution:
     def maxArea(self, height: List[int]) -> int:
-        l, r = 0, len(height)-1
+        l, r = 0, len(height) - 1
+
         def check(x, y):
-            return min(height[x], height[y])*abs(y-x)
+            return min(height[x], height[y]) * abs(y - x)
 
         lgst = 0
 

@@ -1,13 +1,5 @@
 from typing import Optional
-
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-    def __str__(self):
-        return f'{self.val} {self.next.val if self.next else self.next}'
+from DataStructures.ListNode import ListNode
 
 
 class Solution:
@@ -15,7 +7,7 @@ class Solution:
         if (not list1) or (not list2):
             return list1 if list1 else list2
 
-        if list1.val<= list2.val:
+        if list1.val <= list2.val:
             list0 = list1
             list1 = list1.next
         else:
@@ -46,24 +38,14 @@ class Solution:
         list0.next = self.mergeTwoListsHelper(list1, list2, list0)
         return list0
 
+
 nodes = [1, 2, 5, 9, 13, 15]
 nodes2 = [0, 3, 5, 8, 13, 13, 14]
-# nodes = []
-# nodes2 = [0]
 
+ln = ListNode()
+t = ln.getRootFromArray(nodes)
+u = ln.getRootFromArray(nodes2)
 
-def xyzHelper(nodeList, index):
-    if index >= len(nodeList):
-        return None
-    return ListNode(nodeList[index], xyzHelper(nodeList, index + 1))
-
-def xyz(arr):
-    return xyzHelper(arr, 0)
-
-t = xyz(nodes)
-u = xyz(nodes2)
-
-# print(f'{t} {u}')
 r = Solution().mergeTwoLists(t, u)
 while r:
     print(r)

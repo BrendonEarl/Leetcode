@@ -6,10 +6,10 @@ class Solution:
         done = []
 
         for num in nums:
-            if (num not in done) and (nums.count(num) > len(nums)/2):
+            if (num not in done) and (nums.count(num) > len(nums) / 2):
                 return num
             done.append(num)
 
-    #todo: hash table
+    # todo: hash table
 
 # https://leetcode.com/problems/balanced-binary-tree

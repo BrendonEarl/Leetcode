@@ -1,13 +1,5 @@
 from typing import Optional
-
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-    def __str__(self):
-        return f'{self.val} {self.next.val if self.next else self.next}'
+from DataStructures.ListNode import ListNode
 
 
 class Solution:
@@ -35,17 +27,8 @@ class Solution:
 
 nodes = [1, 2]
 
-def xyzHelper(nodeList, index):
-    if index >= len(nodeList):
-        return None
-    return ListNode(nodeList[index], xyzHelper(nodeList, index + 1))
-
-
-def xyz(arr):
-    return xyzHelper(arr, 0)
-
-
-t = xyz(nodes)
+ln = ListNode()
+t = ln.getRootFromArray(nodes)
 
 r = Solution().removeNthFromEnd(t, 1)
 print(r)

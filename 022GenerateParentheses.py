@@ -8,9 +8,9 @@ class Solution:
 
         while answer[:2] == "((":
 
-            for i,c in enumerate(answer):
+            for i, c in enumerate(answer):
                 if c == ")":
-                    l, c, r = answer[:i-1], answer[i-1:i+1], answer[i+1:],
+                    l, c, r = answer[:i - 1], answer[i - 1:i + 1], answer[i + 1:],
                     break
             print([l, c, r])
             while l:
@@ -34,8 +34,9 @@ class Solution:
 print("string"[:-1])
 t = Solution().generateParenthesis(4)
 print(t)
-print(q:=["(((())))","((()()))","((())())","((()))()","(()(()))","(()()())","(()())()","(())(())","(())()()","()((()))","()(()())","()(())()","()()(())","()()()()"])
-#todo
+print(q := ["(((())))", "((()()))", "((())())", "((()))()", "(()(()))", "(()()())", "(()())()", "(())(())", "(())()()",
+            "()((()))", "()(()())", "()(())()", "()()(())", "()()()()"])
+# todo
 
 for e in q:
     if e not in t:
