@@ -29,4 +29,4 @@ froot = TreeNode(1, TreeNode(2, TreeNode(3, TreeNode(4), TreeNode(4)), TreeNode(
 a = Solution().rightSideView(froot)
 print(a)
 
-link = 'https://leetcode.com/problems/binary-tree-right-side-view'
+# https://leetcode.com/problems/binary-tree-right-side-view
