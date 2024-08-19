@@ -10,7 +10,7 @@ class Solution:
                 if not val:
                     zr.append(r)
                     zc.append(c)
-        matrix = [
+        matrix[:] = [
             [(0 if ((c in zc) or (r in zr)) else val) for c, val in enumerate(row)] for r, row in enumerate(matrix)
         ]
         # print(matrix)
