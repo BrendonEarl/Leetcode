@@ -4,6 +4,10 @@ class TreeNode:
         self.left = left
         self.right = right
 
+    def __str__(self):
+        return (f'{self.val} | \n'
+                f'L: {str(self.left)}         R: {str(self.right)}')
+
     def getRootFromArray(self, arr):
         if not arr:
             return None
