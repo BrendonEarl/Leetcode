@@ -5,8 +5,8 @@ class TreeNode:
         self.right = right
 
     def __str__(self):
-        # return f'{self.val}'
-        return self.__str_help()
+        return f'{self.val}'
+        # return self.__str_help() #todo: print tree structure
 
     def getRootFromArray(self, arr):
         if not arr:
@@ -26,7 +26,9 @@ class TreeNode:
         mxdigits = self.__max_digits__()
         depth = self.__depth__()
         width = self.__width__()
+
         return str((mxdigits, depth, width))
+
     def __max_digits__(self):
         return self.__max_digits_help(self)
 
@@ -65,3 +67,7 @@ class TreeNode:
             return 0
 
         return 1 + max(self.__depth_help(node.left), self.__depth_help(node.right))
+
+# tn = TreeNode()
+# test = tn.getRootFromArray([3, 4, 5, 1, 2, None, None, None, None, 0])
+# print(test)
