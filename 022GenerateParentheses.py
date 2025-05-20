@@ -1,45 +1,44 @@
+from traceback import print_stack
 from typing import List
 
 
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
 
-        answer, answers = ("(" * n + ")" * n), [("(" * n + ")" * n)]
+        answers = []
+        answers.append('('* n + ')' * n)
+        if n == 1: return answers
 
-        while answer[:2] == "((":
+        answers.append('()'*n)
+        if n == 2: return answers
 
-            for i, c in enumerate(answer):
-                if c == ")":
-                    l, c, r = answer[:i - 1], answer[i - 1:i + 1], answer[i + 1:],
-                    break
-            print([l, c, r])
-            while l:
-                r = l[-1] + r
-                l = l[:-1]
-                answer2 = l + c + r
-                if answer2 not in answers:
-                    answers.append(answer2)
-
-            while r:
-
-                l = l + r[0]
-                r = r[1:]
-                answer = l + c + r
-                if answer not in answers:
-                    answers.append(answer)
+        for i in range(n-1,1,-1):
+            print(n-i)
+            for j in range(i-1,-1,-1):
+                spaces = ['' for _ in range(i+1)]
+                spaces[j] = '('*(n-i)
+                spaces[j+1] = ')'*(n-i)
+                print(spaces)
+                # self.print_stack(spaces)
 
         return answers
 
+    def print_stack(self,arr):
+        print('()'.join(arr))
 
-print("string"[:-1])
-t = Solution().generateParenthesis(4)
+
+
+# print("string"[:-1])
+t = Solution().generateParenthesis(6)
+print('answer')
 print(t)
-print(q := ["(((())))", "((()()))", "((())())", "((()))()", "(()(()))", "(()()())", "(()())()", "(())(())", "(())()()",
-            "()((()))", "()(()())", "()(())()", "()()(())", "()()()()"])
+# print(t)
+print(q := ["(((())))", "((()()))", "((())())", "((()))()", "(()(()))", "(()()())", "(()())()", "(())(())", "(())()()", "()((()))", "()(()())", "()(())()", "()()(())", "()()()()"])
 # todo
-
 for e in q:
-    if e not in t:
-        print(e)
+    print(e.replace('(','L').replace(')','R'))
+# for e in q:
+#     if e not in t:
+#         print(e)
 
 # https://leetcode.com/problems/generate-parentheses
